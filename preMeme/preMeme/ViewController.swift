@@ -8,22 +8,32 @@
 
 import UIKit
 
-class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
+class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate{
 
-   
+    
+    @IBOutlet weak var type: UITextField!
+    @IBOutlet weak var here: UITextField!
+    
     @IBOutlet weak var imageView: UIImageView!
+    
+
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       
+       type.delegate = self
+        here.delegate = self
     }
     
-   
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+      textField.text = ""
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+       
         
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
            imageView.image = image
@@ -32,10 +42,12 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         dismiss(animated: true, completion: nil)
     }
     
+   
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
 
+    
     @IBAction func picker(_ sender: Any) {
         
         let pickController = UIImagePickerController()
@@ -44,6 +56,8 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         self.present(pickController, animated: true,completion: nil)
         
     }
+    
+    
     
     @IBAction func pickerCamera(_ sender: Any) {
         
@@ -65,10 +79,12 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         present(
             alertVC,
             animated: true,
-            completion: nil)}
+            completion: nil)
+            
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     
-
 }
 

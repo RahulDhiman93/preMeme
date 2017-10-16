@@ -32,8 +32,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         here.defaultTextAttributes = memeAttribute
         type.textAlignment = .center
         here.textAlignment = .center
-        type.backgroundColor = UIColor.clear
-        here.backgroundColor = UIColor.clear
+    
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

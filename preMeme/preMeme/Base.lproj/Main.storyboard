@@ -22,11 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qnz-E2-aqP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="629"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="qnz-E2-aqP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="643"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1A-zL-TrP">
-                                <rect key="frame" x="0.0" y="629" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="643" width="375" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <barButtonItem title="pick" id="Mst-B2-Mlf">
@@ -41,7 +41,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="n5r-xw-PBY">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uoS-dl-rpl">
-                                            <rect key="frame" x="313" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="319" y="0.0" width="40" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Share"/>
                                             <connections>
@@ -98,5 +98,6 @@
     </scenes>
     <resources>
         <image name="Default.png" width="320" height="568"/>
+        <image name="LaunchImage" width="1536" height="2048"/>
     </resources>
 </document>

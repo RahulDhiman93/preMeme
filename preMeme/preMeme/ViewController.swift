@@ -17,8 +17,15 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     @IBOutlet weak var imageView: UIImageView!
     
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        subscribeToKeyboardNotifications()
+    }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
+    }
     
     
     override func viewDidLoad() {
@@ -36,13 +43,45 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         here.backgroundColor = UIColor.clear
     }
     
+    @objc func keyboardWillShow(_ notification:Notification) {
+        
+        view.frame.origin.y  -= getKeyboardHeight(notification)
+    }
+    
+    @objc func keyboardWillHide(_ notification:Notification) {
+        view.frame.origin.y += getKeyboardHeight(notification)
+    }
+    
+    func getKeyboardHeight(_ notification:Notification) -> CGFloat {
+        
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        return keyboardSize.cgRectValue.height
+    }
+    
+    func subscribeToKeyboardNotifications() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+    }
+    
+
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
       textField.text = ""
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+       
         return false
+       
     }
 
     let memeAttribute:[String:Any] = [NSAttributedStringKey.strokeColor.rawValue : UIColor.black,

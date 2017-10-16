@@ -24,13 +24,32 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+       
+        
        type.delegate = self
         here.delegate = self
+        type.defaultTextAttributes = memeAttribute
+        here.defaultTextAttributes = memeAttribute
+        type.textAlignment = .center
+        here.textAlignment = .center
+        type.backgroundColor = UIColor.clear
+        here.backgroundColor = UIColor.clear
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
       textField.text = ""
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+
+    let memeAttribute:[String:Any] = [NSAttributedStringKey.strokeColor.rawValue : UIColor.black,
+                                      NSAttributedStringKey.strokeWidth.rawValue : -2,
+                                      NSAttributedStringKey.foregroundColor.rawValue : UIColor.white,
+                                      NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!]
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
        

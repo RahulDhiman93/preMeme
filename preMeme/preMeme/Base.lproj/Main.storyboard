@@ -23,10 +23,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qnz-E2-aqP">
-                                <rect key="frame" x="16" y="75" width="343" height="448"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="629"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1A-zL-TrP">
                                 <rect key="frame" x="0.0" y="629" width="375" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <barButtonItem title="pick" id="Mst-B2-Mlf">
                                         <connections>
@@ -38,33 +39,44 @@
                                             <action selector="pickerCamera:" destination="BYZ-38-t0r" id="5GQ-FW-Hij"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" id="n5r-xw-PBY">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uoS-dl-rpl">
+                                            <rect key="frame" x="313" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Share"/>
+                                            <connections>
+                                                <action selector="shareMAN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qUm-PG-XtT"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                 </items>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TYPE" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" disabledBackground="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="AGd-Y5-Ghh">
-                                <rect key="frame" x="41" y="90" width="293" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HERE" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" disabledBackground="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="ija-kQ-Pvb">
+                                <rect key="frame" x="41" y="579" width="293" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HERE" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" disabledBackground="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="ija-kQ-Pvb">
-                                <rect key="frame" x="41" y="471" width="293" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TYPE" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" disabledBackground="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="AGd-Y5-Ghh">
+                                <rect key="frame" x="41" y="32" width="293" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ija-kQ-Pvb" secondAttribute="trailing" constant="41" id="31k-wu-Ju3"/>
-                            <constraint firstItem="qnz-E2-aqP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="47U-ha-USZ"/>
-                            <constraint firstItem="AGd-Y5-Ghh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="LCX-KD-CfS"/>
+                            <constraint firstItem="qnz-E2-aqP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="47U-ha-USZ"/>
+                            <constraint firstItem="AGd-Y5-Ghh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="LCX-KD-CfS"/>
                             <constraint firstItem="W1A-zL-TrP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LW7-LG-ba6"/>
                             <constraint firstItem="qnz-E2-aqP" firstAttribute="centerX" secondItem="W1A-zL-TrP" secondAttribute="centerX" id="Tx1-E8-ni9"/>
-                            <constraint firstItem="qnz-E2-aqP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="U7O-JY-RFz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ija-kQ-Pvb" secondAttribute="bottom" constant="166" id="eYl-HA-2DS"/>
+                            <constraint firstItem="qnz-E2-aqP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U7O-JY-RFz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ija-kQ-Pvb" secondAttribute="bottom" constant="58" id="eYl-HA-2DS"/>
                             <constraint firstItem="ija-kQ-Pvb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="jjY-Q2-7nY"/>
                             <constraint firstItem="W1A-zL-TrP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rRl-f5-jVR"/>
-                            <constraint firstItem="W1A-zL-TrP" firstAttribute="top" secondItem="qnz-E2-aqP" secondAttribute="bottom" constant="106" id="t6K-ED-IhP"/>
+                            <constraint firstItem="W1A-zL-TrP" firstAttribute="top" secondItem="qnz-E2-aqP" secondAttribute="bottom" id="t6K-ED-IhP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AGd-Y5-Ghh" secondAttribute="trailing" constant="41" id="tci-GK-BqD"/>
                             <constraint firstAttribute="bottom" secondItem="W1A-zL-TrP" secondAttribute="bottom" constant="-6" id="vCl-9y-vHZ"/>
                             <constraint firstItem="AGd-Y5-Ghh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="wEw-It-wKg"/>
@@ -72,8 +84,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomBar" destination="W1A-zL-TrP" id="z3D-Wv-ORM"/>
                         <outlet property="here" destination="ija-kQ-Pvb" id="XMi-LT-JyB"/>
                         <outlet property="imageView" destination="qnz-E2-aqP" id="ZIR-qk-yxF"/>
+                        <outlet property="shareIt" destination="n5r-xw-PBY" id="xQq-kz-NqW"/>
                         <outlet property="type" destination="AGd-Y5-Ghh" id="Nrz-hs-840"/>
                     </connections>
                 </viewController>

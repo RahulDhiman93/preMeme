@@ -11,15 +11,24 @@ import UIKit
 class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate{
 
     
+    @IBOutlet weak var bottomBar: UIToolbar!
     @IBOutlet weak var type: UITextField!
     @IBOutlet weak var here: UITextField!
+   
     
     @IBOutlet weak var imageView: UIImageView!
     
-
+    @IBOutlet weak var shareIt: UIBarButtonItem!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
+        if let _ = imageView.image {
+            shareIt.isEnabled = true
+        } else {
+            shareIt.isEnabled = false
+        }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,12 +50,30 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         here.textAlignment = .center
         type.backgroundColor = UIColor.clear
         here.backgroundColor = UIColor.clear
+        shareIt.isEnabled = false
+        
+    }
+    
+    
+    struct Meme {
+        let topText: String
+        let bottomText: String
+        let originalImage: UIImage
+        let memedImage: UIImage
+    }
+    
+    
+    func toolBarSet(_ cond:Bool){
+        self.bottomBar.isHidden = cond
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
+       
         
         view.frame.origin.y  -= getKeyboardHeight(notification)
     }
+    
+   
     
     @objc func keyboardWillHide(_ notification:Notification) {
         view.frame.origin.y += getKeyboardHeight(notification)
@@ -98,6 +125,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         }
         
         dismiss(animated: true, completion: nil)
+      
     }
     
    
@@ -141,6 +169,53 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
             
             dismiss(animated: true, completion: nil)
         }
+    }
+    
+   
+    @IBAction func shareMAN(_ sender: Any) {
+        
+        let memedImage = generateMemedImage()
+        
+        let shareActivityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        
+        shareActivityViewController.completionWithItemsHandler = { activity, completed, items, error in
+            
+            if completed {
+                
+                
+                self.save(img: memedImage)
+                
+               
+                self.dismiss(animated: true, completion: nil)
+                
+            }
+            
+        }
+        
+        present(shareActivityViewController, animated: true, completion: nil)
+        
+    }
+    
+    func generateMemedImage() -> UIImage {
+        
+        
+        toolBarSet(true)
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame,
+                                     afterScreenUpdates: true)
+        let memedImage : UIImage =
+            UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        
+        toolBarSet(false)
+        return memedImage
+    }
+    
+    func save(img: UIImage){
+        let meme = Meme(topText: type.text!, bottomText: here.text!, originalImage: img, memedImage: generateMemedImage())
+        
     }
     
     

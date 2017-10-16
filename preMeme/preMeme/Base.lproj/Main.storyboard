@@ -22,17 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="qnz-E2-aqP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="qnz-E2-aqP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="645"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HERE" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" disabledBackground="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="ija-kQ-Pvb">
-                                <rect key="frame" x="41" y="579" width="293" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TYPE" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" disabledBackground="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="AGd-Y5-Ghh">
-                                <rect key="frame" x="41" y="32" width="293" height="30"/>
+                                <rect key="frame" x="41" y="78" width="293" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -62,16 +56,22 @@
                                 </items>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HERE" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" disabledBackground="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="ija-kQ-Pvb">
+                                <rect key="frame" x="41" y="534" width="293" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ija-kQ-Pvb" secondAttribute="trailing" constant="41" id="31k-wu-Ju3"/>
                             <constraint firstItem="qnz-E2-aqP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="47U-ha-USZ"/>
-                            <constraint firstItem="AGd-Y5-Ghh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="LCX-KD-CfS"/>
+                            <constraint firstItem="AGd-Y5-Ghh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="58" id="LCX-KD-CfS"/>
                             <constraint firstItem="W1A-zL-TrP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LW7-LG-ba6"/>
                             <constraint firstItem="qnz-E2-aqP" firstAttribute="centerX" secondItem="W1A-zL-TrP" secondAttribute="centerX" id="Tx1-E8-ni9"/>
                             <constraint firstItem="qnz-E2-aqP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U7O-JY-RFz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ija-kQ-Pvb" secondAttribute="bottom" constant="58" id="eYl-HA-2DS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ija-kQ-Pvb" secondAttribute="bottom" constant="103" id="eYl-HA-2DS"/>
                             <constraint firstItem="ija-kQ-Pvb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="jjY-Q2-7nY"/>
                             <constraint firstItem="W1A-zL-TrP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rRl-f5-jVR"/>
                             <constraint firstItem="W1A-zL-TrP" firstAttribute="top" secondItem="qnz-E2-aqP" secondAttribute="bottom" constant="-6" id="t6K-ED-IhP"/>

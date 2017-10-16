@@ -10,23 +10,35 @@ import UIKit
 
 class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate{
 
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     @IBOutlet weak var bottomBar: UIToolbar!
     @IBOutlet weak var type: UITextField!
+    @IBOutlet weak var shareIt: UIBarButtonItem!
     @IBOutlet weak var here: UITextField!
    
     
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var shareIt: UIBarButtonItem!
+   
+    
+    let launch:UIImage = UIImage(named: "LaunchImage")!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        subscribeToKeyboardNotifications()
+       
         if let _ = imageView.image {
-            shareIt.isEnabled = true
+            if imageView.image != launch{
+                shareIt.isEnabled = true}
         } else {
             shareIt.isEnabled = false
+        }
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            cameraButton.isEnabled = true
+        }
+        else{
+            cameraButton.isEnabled = false
         }
         
     }
@@ -34,22 +46,25 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
+       
     }
     
+    func customize(_ textField:UITextField)
+    {
+        textField.delegate = self
+        textField.defaultTextAttributes = memeAttribute
+        textField.textAlignment = .center
+        textField.backgroundColor = UIColor.clear
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
        
         
-       type.delegate = self
-        here.delegate = self
-        type.defaultTextAttributes = memeAttribute
-        here.defaultTextAttributes = memeAttribute
-        type.textAlignment = .center
-        here.textAlignment = .center
-        type.backgroundColor = UIColor.clear
-        here.backgroundColor = UIColor.clear
+       customize(type)
+        customize(here)
+        
         shareIt.isEnabled = false
         
     }
@@ -62,6 +77,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         let memedImage: UIImage
     }
     
+
     
     func toolBarSet(_ cond:Bool){
         self.bottomBar.isHidden = cond
@@ -96,17 +112,27 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        
     }
     
 
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
       textField.text = ""
+        
+        if here.isEditing == true{
+            subscribeToKeyboardNotifications()
+            
+        }
+        else{
+            unsubscribeFromKeyboardNotifications()
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-       
+        
         return false
        
     }
@@ -134,41 +160,25 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     }
 
     
-    @IBAction func picker(_ sender: Any) {
-        
-        let pickController = UIImagePickerController()
+    func pickIT(_ source: UIImagePickerControllerSourceType){
+    let pickController = UIImagePickerController()
         pickController.delegate = self
-        pickController.sourceType = .photoLibrary
+        pickController.sourceType = source
+        if source == .camera{
+        pickController.cameraCaptureMode = .photo
+            pickController.modalPresentationStyle = .fullScreen }
         self.present(pickController, animated: true,completion: nil)
-        
     }
     
+    @IBAction func picker(_ sender: Any) {
+        
+       pickIT(.photoLibrary)
+}
     
     
     @IBAction func pickerCamera(_ sender: Any) {
         
-        if UIImagePickerController.isSourceTypeAvailable(.camera){
-        let pickController = UIImagePickerController()
-        pickController.delegate = self
-        pickController.sourceType = .camera
-        pickController.cameraCaptureMode = .photo
-        pickController.modalPresentationStyle = .fullScreen
-        
-        self.present(pickController, animated: true,completion: nil)
-    }
-        else{
-            let alertVC = UIAlertController(
-                title: "No Camera",
-                message: "Sorry, this device has no camera",
-                preferredStyle: .alert)
-        
-        present(
-            alertVC,
-            animated: true,
-            completion: nil)
-            
-            dismiss(animated: true, completion: nil)
-        }
+                pickIT(.camera)
     }
     
    

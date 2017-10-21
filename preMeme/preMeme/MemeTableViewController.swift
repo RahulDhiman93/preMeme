@@ -12,11 +12,19 @@ class MemeTableViewController: UITableViewController {
 
     var memes:[Meme] = []
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        memes = appDelegate.memes
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -48,6 +56,12 @@ class MemeTableViewController: UITableViewController {
         
     }
     
-
+    @IBAction func addMeme(_ sender: Any) {
+        
+        let editor = storyboard!.instantiateViewController(withIdentifier: "addMeme")
+       present(editor, animated: true, completion: nil)
+        
+    }
+    
     
 }

@@ -59,7 +59,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
        
         
        customize(type)
@@ -68,16 +68,6 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         shareIt.isEnabled = false
         
     }
-    
-    
-    struct Meme {
-        let topText: String
-        let bottomText: String
-        let originalImage: UIImage
-        let memedImage: UIImage
-    }
-    
-
     
     func toolBarSet(_ cond:Bool){
         self.bottomBar.isHidden = cond
@@ -224,7 +214,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     }
     
     func save(img: UIImage){
-        let meme = Meme(topText: type.text!, bottomText: here.text!, originalImage: img, memedImage: generateMemedImage())
+        let meme = Meme(topText: type.text!, bottomText: here.text!, orignalImage: img, memedImage: generateMemedImage())
         
     }
     

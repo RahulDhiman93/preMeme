@@ -216,6 +216,10 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     func save(img: UIImage){
         let meme = Meme(topText: type.text!, bottomText: here.text!, orignalImage: img, memedImage: generateMemedImage())
         
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+        
     }
     
     

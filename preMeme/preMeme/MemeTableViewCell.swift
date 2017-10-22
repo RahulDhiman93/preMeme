@@ -12,6 +12,8 @@ class MemeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var Pic: UIImageView!
 
+    @IBOutlet weak var DISC: UILabel!
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

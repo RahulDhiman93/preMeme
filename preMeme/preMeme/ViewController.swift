@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate{
 
+    
+    
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     @IBOutlet weak var bottomBar: UIToolbar!
@@ -40,6 +42,8 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         else{
             cameraButton.isEnabled = false
         }
+        
+        
         
     }
     

@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,11 +33,11 @@
             </objects>
             <point key="canvasLocation" x="-3279" y="165"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="nqx-Cg-aDB">
             <objects>
                 <navigationController id="r8z-Sv-Acf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="kj1-76-hyw"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection_30x30" id="kj1-76-hyw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I6K-sU-nbD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -128,11 +129,11 @@
             </objects>
             <point key="canvasLocation" x="-319.19999999999999" y="963.86806596701661"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="TCZ-Vd-bsR">
             <objects>
                 <navigationController id="iNE-yi-ORF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ME6-u2-fhR"/>
+                    <tabBarItem key="tabBarItem" title="" image="table_30x30" id="ME6-u2-fhR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lO6-Ct-ffK">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -161,13 +162,31 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JlH-8G-6Qw">
-                                            <rect key="frame" x="8" y="-15" width="67" height="59"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JlH-8G-6Qw">
+                                            <rect key="frame" x="8" y="-15" width="67" height="58"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUz-z7-Kla">
+                                            <rect key="frame" x="83" y="21.5" width="284" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JlH-8G-6Qw" firstAttribute="leading" secondItem="qHe-Kl-16z" secondAttribute="leadingMargin" id="I2b-JL-tlH"/>
+                                        <constraint firstItem="JlH-8G-6Qw" firstAttribute="top" secondItem="qHe-Kl-16z" secondAttribute="topMargin" constant="-23" id="Seb-cQ-EFj"/>
+                                        <constraint firstItem="gUz-z7-Kla" firstAttribute="leading" secondItem="JlH-8G-6Qw" secondAttribute="trailing" constant="8" symbolic="YES" id="TXi-0A-Icn"/>
+                                        <constraint firstItem="gUz-z7-Kla" firstAttribute="leading" secondItem="JlH-8G-6Qw" secondAttribute="trailing" constant="8" id="dkQ-DD-J9y"/>
+                                        <constraint firstItem="gUz-z7-Kla" firstAttribute="centerY" secondItem="qHe-Kl-16z" secondAttribute="centerY" id="e99-TX-G6N"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="JlH-8G-6Qw" secondAttribute="bottom" constant="-7.5" id="hWs-zT-A51"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="gUz-z7-Kla" firstAttribute="leading" secondItem="iOK-kp-eFP" secondAttribute="leading" constant="83" id="Dsz-9I-M6C"/>
+                                    <constraint firstAttribute="trailing" secondItem="gUz-z7-Kla" secondAttribute="trailing" constant="8" id="OAO-zS-gfP"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="DISC" destination="gUz-z7-Kla" id="Udc-XP-bNr"/>
                                     <outlet property="Pic" destination="JlH-8G-6Qw" id="4zN-vI-v0k"/>
                                 </connections>
                             </tableViewCell>
@@ -274,5 +293,7 @@
     <resources>
         <image name="Default.png" width="320" height="568"/>
         <image name="LaunchImage" width="1536" height="2048"/>
+        <image name="collection_30x30" width="30" height="30"/>
+        <image name="table_30x30" width="30" height="30"/>
     </resources>
 </document>

@@ -223,7 +223,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="645"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TYPE" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" disabledBackground="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="AGd-Y5-Ghh">
-                                <rect key="frame" x="41" y="78" width="293" height="30"/>
+                                <rect key="frame" x="41" y="36" width="293" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HERE" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" disabledBackground="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="ija-kQ-Pvb">
+                                <rect key="frame" x="41" y="581" width="293" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -232,6 +238,11 @@
                                 <rect key="frame" x="0.0" y="639" width="375" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
+                                    <barButtonItem systemItem="cancel" id="jqf-YP-OnP">
+                                        <connections>
+                                            <action selector="cancel:" destination="BYZ-38-t0r" id="r8v-c1-IjR"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="pick" id="Mst-B2-Mlf">
                                         <color key="tintColor" red="1" green="0.46352642710000003" blue="0.064007931609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
@@ -253,32 +264,16 @@
                                 </items>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HERE" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" disabledBackground="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="ija-kQ-Pvb">
-                                <rect key="frame" x="41" y="534" width="293" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuY-FC-mvd">
-                                <rect key="frame" x="16" y="29" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WX5-DQ-KfV"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ija-kQ-Pvb" secondAttribute="trailing" constant="41" id="31k-wu-Ju3"/>
                             <constraint firstItem="qnz-E2-aqP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="47U-ha-USZ"/>
-                            <constraint firstItem="HuY-FC-mvd" firstAttribute="top" secondItem="qnz-E2-aqP" secondAttribute="top" constant="29" id="4vy-xg-euv"/>
-                            <constraint firstItem="AGd-Y5-Ghh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="58" id="LCX-KD-CfS"/>
+                            <constraint firstItem="AGd-Y5-Ghh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="LCX-KD-CfS"/>
                             <constraint firstItem="W1A-zL-TrP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LW7-LG-ba6"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HuY-FC-mvd" secondAttribute="trailing" constant="20" symbolic="YES" id="QlF-sG-btE"/>
                             <constraint firstItem="qnz-E2-aqP" firstAttribute="centerX" secondItem="W1A-zL-TrP" secondAttribute="centerX" id="Tx1-E8-ni9"/>
                             <constraint firstItem="qnz-E2-aqP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U7O-JY-RFz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ija-kQ-Pvb" secondAttribute="bottom" constant="103" id="eYl-HA-2DS"/>
-                            <constraint firstItem="HuY-FC-mvd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="hmM-4m-VJD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ija-kQ-Pvb" secondAttribute="bottom" constant="56" id="eYl-HA-2DS"/>
                             <constraint firstItem="ija-kQ-Pvb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="jjY-Q2-7nY"/>
                             <constraint firstItem="W1A-zL-TrP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rRl-f5-jVR"/>
                             <constraint firstItem="W1A-zL-TrP" firstAttribute="top" secondItem="qnz-E2-aqP" secondAttribute="bottom" constant="-6" id="t6K-ED-IhP"/>
@@ -292,7 +287,6 @@
                     <connections>
                         <outlet property="bottomBar" destination="W1A-zL-TrP" id="z3D-Wv-ORM"/>
                         <outlet property="cameraButton" destination="rIf-nA-sBe" id="U4j-f0-3jF"/>
-                        <outlet property="cancel" destination="HuY-FC-mvd" id="xry-6a-dLW"/>
                         <outlet property="here" destination="ija-kQ-Pvb" id="XMi-LT-JyB"/>
                         <outlet property="imageView" destination="qnz-E2-aqP" id="ZIR-qk-yxF"/>
                         <outlet property="shareIt" destination="n5r-xw-PBY" id="xQq-kz-NqW"/>

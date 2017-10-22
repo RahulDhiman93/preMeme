@@ -14,7 +14,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
-    @IBOutlet weak var cancel: UIButton!
+ 
     
     @IBOutlet weak var bottomBar: UIToolbar!
     @IBOutlet weak var type: UITextField!
@@ -79,7 +79,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     
     func toolBarSet(_ cond:Bool){
         self.bottomBar.isHidden = cond
-        self.cancel.isHidden = cond
+        
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {

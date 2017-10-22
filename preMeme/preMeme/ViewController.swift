@@ -14,6 +14,8 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    @IBOutlet weak var cancel: UIButton!
+    
     @IBOutlet weak var bottomBar: UIToolbar!
     @IBOutlet weak var type: UITextField!
     @IBOutlet weak var shareIt: UIBarButtonItem!
@@ -31,7 +33,9 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
        
         if let _ = imageView.image {
             if imageView.image != launch{
-                shareIt.isEnabled = true}
+                shareIt.isEnabled = true
+                
+            }
         } else {
             shareIt.isEnabled = false
         }
@@ -75,6 +79,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     
     func toolBarSet(_ cond:Bool){
         self.bottomBar.isHidden = cond
+        self.cancel.isHidden = cond
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
@@ -224,6 +229,11 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
         
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        let editor = storyboard!.instantiateViewController(withIdentifier: "start")
+        present(editor, animated: true, completion: nil)
     }
     
     

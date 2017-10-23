@@ -219,8 +219,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="qnz-E2-aqP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="645"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainPage" translatesAutoresizingMaskIntoConstraints="NO" id="qnz-E2-aqP">
+                                <rect key="frame" x="0.0" y="20" width="375" height="625"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TYPE" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" disabledBackground="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="AGd-Y5-Ghh">
                                 <rect key="frame" x="41" y="36" width="293" height="30"/>
@@ -268,7 +268,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ija-kQ-Pvb" secondAttribute="trailing" constant="41" id="31k-wu-Ju3"/>
-                            <constraint firstItem="qnz-E2-aqP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="47U-ha-USZ"/>
+                            <constraint firstItem="qnz-E2-aqP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="47U-ha-USZ"/>
                             <constraint firstItem="AGd-Y5-Ghh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="LCX-KD-CfS"/>
                             <constraint firstItem="W1A-zL-TrP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LW7-LG-ba6"/>
                             <constraint firstItem="qnz-E2-aqP" firstAttribute="centerX" secondItem="W1A-zL-TrP" secondAttribute="centerX" id="Tx1-E8-ni9"/>
@@ -300,8 +300,8 @@
     </scenes>
     <resources>
         <image name="Default.png" width="320" height="568"/>
-        <image name="LaunchImage" width="1536" height="2048"/>
         <image name="collection_30x30" width="30" height="30"/>
+        <image name="mainPage" width="640" height="1136"/>
         <image name="table_30x30" width="30" height="30"/>
     </resources>
 </document>

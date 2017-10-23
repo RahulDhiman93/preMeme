@@ -26,7 +26,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     
    
     
-    let launch:UIImage = UIImage(named: "LaunchImage")!
+    let launch:UIImage = UIImage(named: "mainPage")!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -47,9 +47,8 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
             cameraButton.isEnabled = false
         }
         
-        
-        
     }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -57,12 +56,25 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
        
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isPortrait{
+            imageView.contentMode = .scaleAspectFill
+        }
+        else if UIDevice.current.orientation.isLandscape{
+            imageView.contentMode = .scaleAspectFit
+          
+        }
+    }
+    
+    
     func customize(_ textField:UITextField)
     {
         textField.delegate = self
         textField.defaultTextAttributes = memeAttribute
         textField.textAlignment = .center
         textField.backgroundColor = UIColor.clear
+        textField.keyboardType = .alphabet
+       
     }
     
     override func viewDidLoad() {
